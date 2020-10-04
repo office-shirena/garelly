@@ -1,0 +1,165 @@
+{% load static %}<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+  <meta charset="utf-8">
+  <!-- 検索エンジンにindexされたくない時に記述する。-->
+  <meta name="robots" content="noindex"> 
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!--<link rel="stylesheet" href="{% static 'css/app.css' %}"> -->
+  <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
+  <!-- ファビコン設定時に有効にする
+  <link rel="shortcut icon" href="/favicon.ico" /> 
+  -->
+  <title>PLAM - メニュー</title>
+</head>
+
+<body>
+  <!-- 固定ナビゲーションバー =====================================================================================-->
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <div class="container header">
+  <a class="navbar-brand" href="{% url 'home' %}">PLAM</a>
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="ナビゲーションの切替">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home' %}">メニュー<span class="sr-only">(現位置)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'pl_shipment' %}">パレット出庫</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'hyoji' %}" >サマリー</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">{{ companyname }}</a>
+      </li>  
+        
+   
+      
+<!--
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#"> tabindex="-1" aria-disabled="true"無効</a>
+      </li>
+-->
+    </ul>
+    <form class="form-inline">
+    <a href="{% url 'logout' %}" class="btn btn-sm btn-outline-secondary">ログアウト</a>
+    
+  </form>
+  </div>
+  </div>
+</nav>
+  
+
+
+  <!-- コンテンツ場所 =====================================================================================-->
+  <div class="container main" style="background-color: #EFEFEF;">
+
+
+  <!-- ログアウトボタン押下時のモーダルダイアログ -->
+      <div class="modal fade" id="logout" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+    
+              <div class="modal-header bg-light">
+                <h6 class="modal-title">確認</h6>
+                <button class="close" data-dismiss="modal"><span>&times;</span></button>
+              </div>
+    
+              <div class="modal-body text-center">
+                ログアウトしますか？
+              </div>
+    
+              <div class="modal-footer">
+                <button class="btn btn-secondary" id="modal_logout" data-dismiss="modal"> は い </button>
+                <button class="btn btn-secondary" data-dismiss="modal">いいえ</button>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+    <div class="row">
+ 
+  <!-- Bブロック ==================-->
+      <div class="B01 col-md-9 order-md-2">
+        <div class="row">
+
+          <div class="Bgroup B01-03 col-md-12 pt-3">
+            <div class="card">
+                <h5 class="card-header">入庫登録</h5>
+                <div class="card-body">
+                 <table class="table table-striped table-sm">
+                    <form action="{% url 'change' id %}" method ="post">
+                        {% csrf_token %}
+                        <div>
+                            <label>伝票No</label>
+                            <input id="keyid" type="text" name="keyid" value={{keyid}}>
+                        </div>
+                        <div>
+                            <label>PL種別</label>
+                            <input id="PLtype" type="text" name="PLtype" value={{PLtype}}>
+                        </div>
+                        <div>
+                            <label>PL名称</label>
+                            <input id="PLname" type="text" name="PLname" value={{PLname}}>
+                        </div>
+                        <div>
+                            <label>数量</label>
+                            <input id="PLvolume" type="text" name="PLvolume" value={{PLvolume}}>
+                        </div>
+                        <div>
+                            <label>送り元コード</label>
+                            <input id="sndCompanycode" type="text" name="sndCompanycode" value={{sndCompanycode}}>
+                        </div>
+                        <div>
+                            <label>荷受け元コード</label>
+                            <input id="rcvCompanycode" type="text" name="rcvCompanycode" value={{rcvCompanycode}}>
+                        </div>
+                        <div>
+                            <label>送付日付</label>
+                            <input id="sndDate" type="text" name="sndDate" value={{sndDate}}>
+                        </div>
+                        <div>
+                            <label>着荷日付</label>
+                            <input id="rcvDate" type="text" name="rcvDate" value={{rcvDate}}>
+                        </div>
+                      
+                        <input type="submit" value= "登録" class="btn btn-outline-primary">
+                    </form>
+                  </table>  
+                    
+                </div>
+            </div>
+          </div>
+           
+   
+          
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- フッターエリア  fixed-bottom　=============================================================================-->
+  <footer class="footer">
+    <div class="container footer">
+      <span class="text-white"><small>© ROHTO Pharmaceutical Co.,Ltd. All rights reserved.</small></span>
+    </div>
+  </footer>
+  
+  <!-- Bootstrap core JavaScript================================================== -->
+  <!-- BootStrap有効時、scriptの順序注意!!　1.jquery 2.popper 3.bootstrap -->
+  <script src="js/jquery-3.3.1.slim.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/vue.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

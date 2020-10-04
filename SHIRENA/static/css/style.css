@@ -1,0 +1,131 @@
+
+
+/*===== ロゴ用フォント =====*/
+  .logo-font{
+    font-family:"游ゴシック Light","Candara Light","Segoe Print", "MV Boli",  "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    font-size: 150%; 
+  }
+
+  .logo-font2{
+    font-family:"游ゴシック Light","Candara Light","Segoe Print", "MV Boli",  "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    font-size: 500%; 
+  }
+  
+/*===== ヘッダー =====*/  
+  .navbar{
+    background-color: #0066B3;
+  }
+
+
+
+
+/*===== コンテンツ共通 =====*/
+  body {
+  font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  }
+
+  .main{
+    padding-top: 70px;
+    padding-bottom: 60px;
+  }
+
+  /*== テーブル内で折り返ししない ==*/
+  td { 
+    white-space: nowrap;
+  }
+
+  /*== テーブルヘッダの背景色 == 
+   th {
+    background-color: #FFFFFF;
+  } 
+  */
+
+/*===== 数値入力フィールドで、INPUTタグの増減ボタンを表示しない。 =====*/
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance:textfield;
+  }
+
+
+
+
+
+/*===== A系画面共通 =====*/  
+  .form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+  }
+  .form-signin .checkbox {
+    font-weight: 400;
+  }
+  .form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .form-signin input[type="password"] {
+    margin-bottom: -1px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .form-signin input[type="number"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+
+
+
+/*===== B0100画面で使用 =====*/  
+.card-b_B0100{
+  width: 100%;
+  height: 250px;
+  overflow:auto;
+}
+  .menu_back_color{
+    background-color: #f7f7f7;
+  }
+
+
+
+
+/*===== C系画面共通 =====*/  
+  .C-group-table{
+    max-width: 800px;
+    height: 400px;
+    overflow:auto;
+  }
+
+
+
+
+/*===== フッター =====*/
+  .footer {
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+    background-color: #666666;
+  }
+

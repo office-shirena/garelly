@@ -1,0 +1,20 @@
+
+
+  .content1{
+    width: 700px;
+  }
+
+  .content2{
+    height: 90px;
+  }
+
+  .counter-font{
+    font-size: 110%;
+  }
+  .counter-fontnum{
+    font-size: 200%;
+  }
+  
+  html{
+    touch-action: manipulation;
+  }
